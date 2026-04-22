@@ -7,10 +7,11 @@
     <style>
         :root {
             --primary-color: #2c3e50;
-            --accent-color: #e67e22;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
             --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
             --text-color: #333;
+            --white: #ffffff;
         }
 
         body {
@@ -19,249 +20,212 @@
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: linear-gradient(135deg, #00467f, #a5c7e7);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
         }
 
         .container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 0 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .download-section {
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 { color: var(--primary-color); margin-bottom: 5px; }
+        h2 { color: var(--accent-color); border-left: 5px solid var(--accent-color); padding-left: 15px; margin-top: 40px; }
+        h3 { color: var(--secondary-color); font-size: 1.1em; }
+
+        .download-container {
             text-align: center;
             margin: 30px 0;
         }
 
         .btn-download {
-            background-color: var(--accent-color);
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--white);
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            transition: transform 0.3s, background-color 0.3s;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
         }
 
         .btn-download:hover {
-            background-color: #d35400;
-            transform: translateY(-3px);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
-            margin-top: 40px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-color);
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
             margin: 20px 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            font-size: 0.95em;
         }
 
         th {
             background-color: var(--primary-color);
-            color: white;
+            color: var(--white);
             text-align: left;
-            padding: 12px 15px;
+            padding: 12px;
         }
 
         td {
-            padding: 12px 15px;
+            padding: 12px;
             border-bottom: 1px solid #ddd;
         }
 
-        tr:hover {
-            background-color: #f1f1f1;
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1f1f1; }
+
+        .info-panel {
+            background: #eef2f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
         }
 
         .badge {
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.85em;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
             font-weight: bold;
         }
+        .fundamental { background: #d4edda; color: #155724; }
+        .ampliada { background: #fff3cd; color: #856404; }
 
-        .fundamental { background: #e8f4fd; color: #2b6cb0; }
-        .laboral { background: #fff5f5; color: #c53030; }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9em;
-            color: #666;
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            table { font-size: 0.8em; }
+            th, td { padding: 8px; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Implementación Marco Curricular Común 2025</h1>
-    <p>Colegio de Bachilleres del Estado de Durango (COBAED)</p>
-</header>
-
 <div class="container">
-    
-    <div class="download-section">
-        <a href="https://drive.google.com/file/d/1vWbLgZ6JwMroCU294mIQ-GHSYUBLHKxx/view?usp=drive_link" target="_blank" class="btn-download">
-            📩 Descargar Oficio Original (PDF)
+    <header>
+        <div class="logo-text">CONSTRUYENDO LA RUTA </div>
+        <p>HACIA UNA MEJORA CONTINUA</p>
+        <h1>Implementación del Marco Curricular Común 2025</h1>
+        <p><strong>COBAED</strong> - Colegio de Bachilleres del Estado de Durango</p>
+    </header>
+
+    <div class="download-container">
+        <a href="https://drive.google.com/file/d/1yyyYtUr3y_tq8jbgBGDBDZ4ly_X2fjrT/view?usp=drive_link" class="btn-download" target="_blank">
+            ⬇️ Descargar PDF Original
         </a>
     </div>
 
-    <section>
-        <h2>1er Semestre: Transición de Unidades (UAC)</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Modelo Anterior (UAC)</th>
-                    <th>Asignatura (MCCEMS 2025)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Lengua y Comunicación I</td><td>Lengua y comunicación I. Leer y escribir para pensarnos juntos</td></tr>
-                <tr><td>Pensamiento Matemático I</td><td>Pensamiento matemático I. Pensamiento aritmético</td></tr>
-                <tr><td>La materia y sus interacciones</td><td>Ciencias Naturales, Tecnología I. Invitación a la ciencia</td></tr>
-                <tr><td>Ciencias Sociales I / Lab. Investigación</td><td>Ciencias sociales I. Estado, ciudadanía y relaciones de poder</td></tr>
-                <tr><td>Humanidades I</td><td>Pensamiento Filosófico y Humanidades I. El ejercicio de filosofar</td></tr>
-                <tr><td>Cultura Digital I</td><td>Cultura digital I. Ciudadanía digital</td></tr>
-                <tr><td>Inglés I</td><td>Inglés I. To be, or not to be, that is the question</td></tr>
-            </tbody>
-        </table>
-    </section>
+    <div class="info-panel">
+        <strong>Documentos de Referencia:</strong><br>
+        • Primer Semestre: Oficio DGCB/1315/202<br>
+        • Tercer Semestre: Oficio No. DiAc/173/2026
+    </div>
 
-    <section>
-        <h2>3er Semestre: Formación Fundamental</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Lengua y Comunicación III</h3>
-                <p>Describir culturas, apropiarse de las palabras.</p>
-                <span class="badge fundamental">3 Horas</span>
-            </div>
-            <div class="card">
-                <h3>Pensamiento Matemático III</h3>
-                <p>Pensamiento algebraico e introducción a geometría plana.</p>
-                <span class="badge fundamental">4 Horas</span>
-            </div>
-            <div class="card">
-                <h3>Ciencias Naturales III</h3>
-                <p>Nuestro hogar. El sistema terrestre.</p>
-                <span class="badge fundamental">4 Horas</span>
-            </div>
-            <div class="card">
-                <h3>Humanidades III</h3>
-                <p>Las reflexiones filosóficas sobre el Hacer.</p>
-                <span class="badge fundamental">5 Horas</span>
-            </div>
-        </div>
-    </section>
+    <h2>Primer Semestre (MCCEMS 2025)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>UAC (Modelo Anterior)</th>
+                <th>Asignatura (MCCEMS 2025)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Lengua y Comunicación I</td><td>Lengua y comunicación I. Leer y escribir para pensarnos juntos</td></tr>
+            <tr><td>Pensamiento Matemático I</td><td>Pensamiento matemático I. Pensamiento aritmético</td></tr>
+            <tr><td>La materia y sus interacciones</td><td>Ciencias Naturales, Experimentales y Tecnología I. Invitación a la ciencia. Naturaleza de la materia</td></tr>
+            <tr><td>Ciencias Sociales I / Lab. de Investigación</td><td>Ciencias sociales I. Estado, ciudadanía y relaciones de poder / Laboratorio de investigación *</td></tr>
+            <tr><td>Humanidades I</td><td>Pensamiento Filosófico y Humanidades I. El ejercicio de filosofar la perspectiva humanista</td></tr>
+            <tr><td>Cultura Digital I</td><td>Cultura digital I. Ciudadanía digital</td></tr>
+            <tr><td>Inglés I</td><td>Inglés I. To be, or not to be, that is the question</td></tr>
+            <tr><td>Formación socioemocional I</td><td>Formación socioemocional I</td></tr>
+        </tbody>
+    </table>
 
-    <section>
-        <h2>Formación Laboral Básica (3er Semestre)</h2>
-        <p>Especialidades técnicas autorizadas por plantel:</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Especialidad / Capacitación</th>
-                    <th>Materias Incluidas</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><b>Administración de Recursos Humanos</b></td>
-                    <td>Habilidades Organizacionales, Proceso de Admisión.</td>
-                </tr>
-                <tr>
-                    <td><b>Higiene y Salud Comunitaria</b></td>
-                    <td>Bases Anatómicas, Epidemiología.</td>
-                </tr>
-                <tr>
-                    <td><b>Asistencia Infantil</b></td>
-                    <td>Perfil en Asistencia Infantil, Cuidado Infantil.</td>
-                </tr>
-                <tr>
-                    <td><b>Tecnologías de la Información (TIC)</b></td>
-                    <td>Gestión de Archivos de Texto, Hoja de Cálculo Aplicado.</td>
-                </tr>
-                <tr>
-                    <td><b>Robótica y Nuevas Tecnologías</b></td>
-                    <td>Programación de placas de desarrollo, Electrónica básica.</td>
-                </tr>
-                <tr>
-                    <td><b>Interpretación y Traducción Inglés</b></td>
-                    <td>Principios de Traducción, Fonética y Fonología.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <h2>Tercer Semestre - Formación Fundamental</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Hrs</th>
+                <th>Tipo de Formación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Lengua y Comunicación III. Describir culturas, apropiarse de las palabras</td><td>3</td><td><span class="badge fundamental">Fundamental</span></td></tr>
+            <tr><td>Pensamiento Matemático III. Pensamiento algebraico e introducción a geometría plana</td><td>4</td><td><span class="badge fundamental">Fundamental</span></td></tr>
+            <tr><td>Ciencias Naturales, Experimentales y Tecnología III. Nuestro hogar. El sistema terrestre</td><td>4</td><td><span class="badge fundamental">Fundamental</span></td></tr>
+            <tr><td>Pensamiento Filosófico y Humanidades III. Las reflexiones filosóficas sobre el Hacer</td><td>5</td><td><span class="badge fundamental">Fundamental</span></td></tr>
+            <tr><td>Inglés III. What we were, we share</td><td>3</td><td><span class="badge fundamental">Fundamental</span></td></tr>
+            <tr><td>Formación Socioemocional III</td><td>4</td><td><span class="badge ampliada">Ampliada</span></td></tr>
+        </tbody>
+    </table>
 
-    <section>
-        <h2>Unidades Optativas (5° y 6° Semestre)</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Área Administrativa / Contable</h3>
-                <ul>
-                    <li>Taller de Pensamiento Variacional I y II</li>
-                    <li>Fundamentos de la Administración I y II</li>
-                    <li>Economía I y II</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Área Químico-Biológica / Salud</h3>
-                <ul>
-                    <li>Análisis de Procesos Biológicos</li>
-                    <li>Salud Integral I y II</li>
-                    <li>Temas Selectos de Biología</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Área Físico-Matemática / Diseño</h3>
-                <ul>
-                    <li>Análisis de Fenómenos Físicos I y II</li>
-                    <li>Taller de Probabilidad y Estadística I y II</li>
-                    <li>Pensamiento Variacional</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <h2>Formación Laboral Básica (Capacitaciones)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Hrs</th>
+                <th>Área de Capacitación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Habilidades Organizacionales</td><td>3</td><td>Administración de Recursos Humanos</td></tr>
+            <tr><td>Proceso de Admisión de los Recursos Humanos</td><td>4</td><td>Administración de Recursos Humanos</td></tr>
+            <tr><td>Bases Anatómicas y Fisiológicas y el Proceso Salud-Enfermedad</td><td>4</td><td>Higiene y Salud Comunitaria</td></tr>
+            <tr><td>Epidemiología</td><td>3</td><td>Higiene y Salud Comunitaria</td></tr>
+            <tr><td>El Perfil en Asistencia Infantil y Etapas del Desarrollo</td><td>3</td><td>Asistencia Infantil</td></tr>
+            <tr><td>Asistencia en el Cuidado Infantil</td><td>4</td><td>Asistencia Infantil</td></tr>
+            <tr><td>Gestión de Archivos de Texto</td><td>3</td><td>Tecnologías de Información y Comunicación</td></tr>
+            <tr><td>Hoja de Cálculo Aplicado</td><td>4</td><td>Tecnologías de Información y Comunicación</td></tr>
+            <tr><td>Componentes Básicos de un Laboratorio</td><td>4</td><td>Laboratorista Químico</td></tr>
+            <tr><td>Legislación de un Laboratorio</td><td>3</td><td>Laboratorista Químico</td></tr>
+            <tr><td>Principios Básicos de la Interpretación y la Traducción</td><td>4</td><td>Interpretación y Traducción Inglés</td></tr>
+            <tr><td>Fonética y Fonología del Inglés</td><td>3</td><td>Interpretación y Traducción Inglés</td></tr>
+            <tr><td>Emprendimiento y Empresa</td><td>3</td><td>Administración</td></tr>
+            <tr><td>Programación de placas de desarrollo</td><td>4</td><td>Robótica y Nuevas Tecnologías</td></tr>
+            <tr><td>Nociones de la Intervención Educativa</td><td>4</td><td>Intervención en Educación Obligatoria</td></tr>
+        </tbody>
+    </table>
 
+    <footer>
+        <p><strong>COBAED - Dirección Académica</strong></p>
+        <p>Carretera al Pueblito #112, El Pueblito, Durango, Dgo. CP 34307</p>
+        <p>Teléfono: (618) 137 3900</p>
+    </footer>
 </div>
-
-<footer>
-    <p>© 2026 Colegio de Bachilleres del Estado de Durango - "Construye Gigante"</p>
-    <p>Carretera al Pueblito #112, Durango, Dgo.</p>
-</footer>
 
 </body>
 </html>
