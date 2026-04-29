@@ -54,6 +54,10 @@
         .download-container {
             text-align: center;
             margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
         }
 
         .btn-download {
@@ -67,12 +71,18 @@
             display: inline-flex;
             align-items: center;
             box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            width: fit-content;
+        }
+
+        .btn-official {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.4);
         }
 
         .btn-download:hover {
-            background-color: #c0392b;
+            opacity: 0.9;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
         table {
@@ -128,6 +138,7 @@
             .container { padding: 15px; }
             table { font-size: 0.8em; }
             th, td { padding: 8px; }
+            .btn-download { width: 90%; justify-content: center; }
         }
     </style>
 </head>
@@ -143,15 +154,18 @@
 
     <div class="download-container">
         <a href="https://drive.google.com/file/d/1yyyYtUr3y_tq8jbgBGDBDZ4ly_X2fjrT/view?usp=drive_link" class="btn-download" target="_blank">
-            ⬇️ Descargar PDF
+            ⬇️ Descargar Malla Curricular (PDF)
+        </a>
+        <a href="https://drive.google.com/file/d/1yn5GCwvpIUBFqN05AwQyZsBTNn7BzO2x/view?usp=drive_link" class="btn-download btn-official" target="_blank">
+            📋 Estructura Curricular Oficial MCCEMS Modelo 2025
         </a>
     </div>
 
     <div class="info-panel">
         <strong>Documentos de Referencia:</strong><br>
-        • Primer Semestre: Oficio DGCB/1315/2025 [cite: 2]<br>
-        • Segundo Semestre (G-2025-2028): Oficio No. DiAc/512/2025 [cite: 5, 6]<br>
-        • Tercer Semestre: Oficio No. DiAc/173/2026 [cite: 9]
+        • Primer Semestre: Oficio DGCB/1315/2025<br>
+        • Segundo Semestre (G-2025-2028): Oficio No. DiAc/512/2025<br>
+        • Tercer Semestre: Oficio No. DiAc/173/2026
     </div>
 
     <h2>Primer Semestre (Generación 2025-2028)</h2>
@@ -192,7 +206,7 @@
             <tr><td>Lengua y Comunicación</td><td>Lengua y Comunicación II. Libertad para imaginar, poder para comunicar</td><td>3</td><td>6</td></tr>
             <tr><td>Pensamiento Matemático</td><td>Pensamiento matemático II. Introducción al álgebra</td><td>4</td><td>8</td></tr>
             <tr><td>Ciencias Naturales, Exp. y Tec.</td><td>Ciencias Naturales, Experimentales y Tecnología II. El poder de la energía</td><td>4</td><td>8</td></tr>
-            <td></td><td>Taller de Ciencias I</td><td>4</td><td>8</td></tr>
+            <tr><td></td><td>Taller de Ciencias I</td><td>4</td><td>8</td></tr>
             <tr><td>Ciencias Sociales</td><td>Ciencias sociales II. Organización, relaciones sociales y económicas.</td><td>2</td><td>4</td></tr>
             <tr><td>Pensamiento Filosófico y Hum.</td><td>Pensamiento Filosófico y Humanidades II. Las reflexiones filosóficas sobre el conocer.</td><td>4</td><td>8</td></tr>
             <tr><td>Cultura Digital</td><td>Cultura Digital II. Aprendizaje individual y colaborativo.</td><td>2</td><td>4</td></tr>
@@ -222,7 +236,7 @@
     </table>
 
     <h2>Formación Laboral Básica (Capacitaciones Autorizadas)</h2>
-    <p style="font-size: 0.85em; color: #666; margin-top: -15px;">* Aplica según la oferta disponible en el plantel[cite: 11].</p>
+    <p style="font-size: 0.85em; color: #666; margin-top: -15px;">* Aplica según la oferta disponible en el plantel.</p>
     <table>
         <thead>
             <tr>
